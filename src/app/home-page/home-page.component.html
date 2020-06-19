@@ -1,0 +1,9 @@
+<main>
+  <h1><b>spellbook.app</b> is not an YGO copy of some famous big MTG card seach site</h1>
+
+  <form (submit)="searchCard($event)">
+    <input type="text" class="cardsearch" id="cardsearch" name="cardsearch" [(ngModel)]="cardsearch">
+  </form>
+
+  <a routerLink="/" class="ghost"></a>
+</main>

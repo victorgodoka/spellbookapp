@@ -1,0 +1,14 @@
+<app-header></app-header>
+
+<main class="main">
+  <div class="filter"></div>
+  <div class="disclaimer">
+    <p>Found <b>{{cardsResults.length}} cards</b> with this search</p>
+  </div>
+  <ul class="cards__result">
+    <li *ngFor="let card of cardsResults">
+      <a [routerLink]="['/card', card.id]" target="_blank"><img [src]="card.card_images[0].image_url" [alt]="card.name"></a>
+    </li>
+  </ul>
+  
+</main>

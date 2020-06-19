@@ -1,0 +1,6 @@
+<nav class="header">
+  <form (submit)="searchCard($event)">
+    <a routerLink="/"><img src="/assets/home.png" alt="home"></a>
+    <input type="text" class="cardsearch" id="cardsearch" name="cardsearch" [(ngModel)]="cardsearch">
+  </form>
+</nav>

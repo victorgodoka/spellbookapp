@@ -1,0 +1,47 @@
+main {
+  background: rgb(28, 37, 36);
+  background: -moz-linear-gradient(180deg, rgba(28, 37, 36, 1) 0%, rgba(30, 67, 67, 1) 100%);
+  background: -webkit-linear-gradient(180deg, rgba(28, 37, 36, 1) 0%, rgba(30, 67, 67, 1) 100%);
+  background: linear-gradient(180deg, rgba(28, 37, 36, 1) 0%, rgba(30, 67, 67, 1) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#1c2524", endColorstr="#1e4343", GradientType=1);
+  height: 100vh;
+  color: #fafafa;
+  width: 100%;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+h1 {
+  font-size: 2rem;
+  text-align: center;
+  font-weight: light;
+}
+
+h1 b {
+  font-weight: bold;
+}
+
+.cardsearch {
+  margin: 20px 0;
+  outline: none;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  font-size: 2rem;
+  padding: 12px 14px 12px 44px;
+  color: #fafafa;
+  width: 100%;
+  max-width: 520px;
+  background: url('/assets/search.png') 10px center no-repeat #222424;
+  background-size: 24px;
+}
+
+.spoilers-news {
+  font-size: 1rem;
+  margin: 10px 0;
+  color: #fafafa;
+  text-align: center;
+  line-height: 2;
+}

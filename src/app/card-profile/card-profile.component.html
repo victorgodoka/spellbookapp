@@ -1,0 +1,95 @@
+<app-header></app-header>
+
+<main class="main">
+  <div class="inner-flex">
+    <div class="card-image">
+      <div class="card-image-area">
+        <img
+          class="card"
+          [src]="cardProfile.card_images[0].image_url"
+          [alt]="cardProfile.name"
+        />
+      </div>
+    </div>
+    <div class="card-data">
+      <p class="card card-name">
+        {{ cardProfile.name }} <img [src]="'/assets/' + (cardProfile.attribute || cardProfile.type.split(' ')[0]).toLowerCase() + '.png'" alt="">
+      </p>
+      <p class="card card-level" *ngIf="cardProfile.type.indexOf('XYZ') === -1">
+        <img
+          class="cardlevel"
+          *ngFor="let item of createArray(cardProfile.level)"
+          src="/assets/star.png"
+          alt="level star"
+        />
+      </p>
+      <p class="card card-rank" *ngIf="cardProfile.type.indexOf('XYZ') !== -1">
+        <img
+          class="cardlevel"
+          *ngFor="let item of createArray(cardProfile.level)"
+          src="/assets/rank.png"
+          alt="level star"
+        />
+      </p>
+      <p class="card card-type">
+        {{ cardProfile.race }} / {{ cardProfile.type }}
+      </p>
+      <p class="card card-desc" [innerHtml]="cardProfile.desc | safe: 'html' "></p>
+      <p class="card card-atkdef" *ngIf="cardProfile.type.indexOf('Trap') === -1 && cardProfile.type.indexOf('Spell') === -1">
+        <span>ATK/ {{ cardProfile.atk || 0 }}</span>
+        <span *ngIf="cardProfile.type.indexOf('Link') === -1">DEF/ {{ cardProfile.def || 0 }}</span>
+        <span *ngIf="cardProfile.type.indexOf('Link') !== -1">LINK-{{ cardProfile.linkval || 0 }}</span>
+      </p>
+    </div>
+    <div class="prints">
+      <!-- <div class="prints-current">
+        <a
+          class="prints-current-set"
+          data-track='{"category":"Card Detail","action":"Navigate","label":"Parent Set"}'
+          href="https://scryfall.com/sets/2xm"
+        >
+          <span class="prints-current-set-name">
+            Double Masters (2XM)
+          </span>
+          <span class="prints-current-set-details">
+            #357 · Mythic Rare · English
+          </span>
+        </a>
+      </div> -->
+
+      <div class="print-grid">
+        <ul class="print-grid-head">
+          <li title="Card Market">CM</li>
+          <li title="TCG Player">TCGP</li>
+          <li title="E-Bay">EBAY</li>
+          <li title="Amazon">AMZN</li>
+          <li title="Cool Stuff Inc.">COOL</li>
+        </ul>
+        <ul class="print-grid-items">
+          <li>{{ cardProfile.card_prices[0].cardmarket_price | currency }}</li>
+          <li>{{ cardProfile.card_prices[0].tcgplayer_price | currency }}</li>
+          <li>{{ cardProfile.card_prices[0].ebay_price | currency }}</li>
+          <li>{{ cardProfile.card_prices[0].amazon_price | currency }}</li>
+          <li>{{ cardProfile.card_prices[0].coolstuffinc_price | currency }}</li>
+        </ul>
+      </div>
+
+      <div class="print-grid">
+        <ul class="print-grid-head">
+          <li class="span-3">PRINT</li>
+          <li class="span-2">SET PRICE</li>
+        </ul>
+        <ul *ngFor="let set of cardProfile.card_sets" class="print-grid-items">
+          <li class="span-3">{{ set.set_name }}</li>
+          <li class="span-2">{{ set.set_price | currency }}</li>
+        </ul>
+      </div>
+
+      <div class="prints-info-section">
+        <h2></h2>
+
+        <div class="prints-info-section-note"></div>
+      </div>
+    </div>
+  </div>
+</main>

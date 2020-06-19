@@ -1,0 +1,38 @@
+.header {
+  background-color: #25393a;
+  width: 100%;
+}
+
+.header form {
+  max-width: 1000px;
+  margin: 0 auto;
+  display: flex;
+  height: 60px;
+  padding: 0 2.5%;
+  align-items: center;
+}
+
+input {
+  border: none;
+  font-size: 1.755rem;
+  padding: 6px 0;
+  padding-left: 30px;
+  height: 100%;
+  background-color: none;
+  outline: none;
+  color: #fafafa;
+  width: 100%;
+  max-width: 640px;
+  background: url('/assets/search.png') center left no-repeat;
+  background-size: 24px;
+}
+
+a {
+  padding-right: 10px;
+  border-right: 1px solid grey;
+  margin-right: 10px;
+}
+
+a img {
+  width: 32px;
+}
